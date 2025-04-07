@@ -1,0 +1,62 @@
+/* styleForm.css */
+form {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px;  /* Ajout d'un peu plus de padding autour du formulaire */
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Espacement entre les champs */
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px; /* Espacement entre le label et l'input */
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;  /* Augmenter le padding pour un espacement intérieur plus confortable */
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Bords légèrement plus arrondis */
+    font-size: 14px;
+    box-sizing: border-box; /* Assurer que le padding est pris en compte dans la largeur totale */
+  }
+  
+  .form-group input[type="date"] {
+    padding: 10px; /* Ajustement du padding pour les champs de type date */
+  }
+  
+  .form-group select {
+    cursor: pointer;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px; /* Arrondir légèrement les bords du bouton */
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 150px;
+    padding: 12px; /* Ajout de padding pour un meilleur rendu */
+  }
+  

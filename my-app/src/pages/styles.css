@@ -1,0 +1,162 @@
+/* ======= Styles de la Sidebar ======= */
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #4CAF50, #83c485); /* Dégradé bleu */
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.sidebar ul li {
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #ffcc00;
+  padding-left: 20px;
+}
+
+
+/* ======= Contenu principal ======= */
+.main-content {
+  margin-left: 200px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  background: #f4f6f9;
+  overflow-y: auto;
+}
+
+/* ======= Style du filtrage ======= */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters select,
+.filters input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ======= Table des formations ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #4CAF50;
+  color: white;
+}
+
+table tr:hover {
+  background: #f1f1f1;
+}
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.filter-item label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-item input {
+  width: 150px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filter-button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter-button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 900px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
