@@ -1,31 +1,35 @@
 /* ======= Styles de la Sidebar ======= */
 .sidebar {
-  width: 200px;
+  width: 220px; /* Légèrement plus large pour plus de confort */
   height: 100vh;
-  background: linear-gradient(to bottom, #4CAF50, #83c485); /* Dégradé bleu */
+  background: linear-gradient(to bottom, #4CAF50, #83c485); /* Dégradé vert */
   color: white;
   position: fixed;
   left: 0;
   top: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  align-items: stretch; /* L'alignement prend toute la largeur */
+  padding-top: 30px; /* Augmenter un peu l'espace en haut */
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
+  z-index: 1000; /* Assurer qu'il soit au-dessus du contenu */
+  overflow-y: auto; /* Ajouter un défilement si le contenu dépasse */
 }
 
 .sidebar h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 26px; /* Augmenter la taille du titre */
+  margin-bottom: 25px; /* Plus d'espace sous le titre */
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
+  text-align: center; /* Centrer le titre */
+  padding: 0 10px; /* Ajouter un petit espacement horizontal */
 }
 
 .sidebar ul {
   list-style: none;
-  width: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar ul li {
@@ -35,19 +39,41 @@
 .sidebar ul li a {
   display: block;
   width: 100%;
-  padding: 15px 20px;
+  padding: 15px 25px; /* Augmenter un peu l'espacement horizontal */
   font-size: 18px;
   color: white;
   text-decoration: none;
   transition: 0.3s ease;
   border-left: 4px solid transparent;
+  text-align: left; /* S'assurer que le texte est bien aligné */
 }
 
 .sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.1); /* Moins intense que l'original */
+  border-left: 4px solid #ffcc00;
+  padding-left: 25px; /* Ajouter plus d'espace au survol */
+}
+
+/* Ajout d'un style au lien actif (si nécessaire) */
+.sidebar ul li a.active {
   background: rgba(255, 255, 255, 0.2);
   border-left: 4px solid #ffcc00;
-  padding-left: 20px;
 }
+
+/* Ajouter un style de défilement personnalisé si nécessaire */
+.sidebar::-webkit-scrollbar {
+  width: 6px; /* Largeur de la barre de défilement */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #83c485; /* Couleur de la barre de défilement */
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
 
 
 /* ======= Contenu principal ======= */
