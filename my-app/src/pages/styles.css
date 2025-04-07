@@ -95,6 +95,8 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 220px; /* Ajout d'un espace à gauche pour éviter le chevauchement avec la sidebar */
+  width: calc(100% - 220px); /* Ajuster la largeur de la section de filtrage en fonction de la sidebar */
 }
 
 .filters select,
@@ -107,11 +109,12 @@
 
 /* ======= Table des formations ======= */
 table {
-  width: 100%;
+  width: 100%; /* Prendre toute la largeur disponible après la sidebar */
   border-collapse: collapse;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 20px; /* Marge à gauche pour ne pas chevaucher la sidebar */
 }
 
 table th, table td {
@@ -128,6 +131,7 @@ table th {
 table tr:hover {
   background: #f1f1f1;
 }
+
 .filter-container {
   display: flex;
   justify-content: space-between;
@@ -135,8 +139,8 @@ table tr:hover {
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  width: 100%;
-  max-width: 1200px;
+  width: calc(100% - 220px); /* Limiter la largeur pour laisser de l'espace à la sidebar */
+  max-width: 100%; /* S'assurer que la largeur ne dépasse pas celle de l'écran */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
 }

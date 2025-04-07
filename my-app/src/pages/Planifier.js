@@ -72,7 +72,7 @@ const Planifier = () => {
           applyFilters={applyFilters} 
         />
 
-        <button onClick={handleSubmit}>Soumettre les formations sélectionnées</button>
+        {/* <button onClick={handleSubmit}>Soumettre les formations sélectionnées</button> */}
 
         <table border="1">
           <thead>
