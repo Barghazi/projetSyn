@@ -121,8 +121,8 @@ const Planifier = () => {
                       </td>
                       <td>{formation.titre}</td>
                       <td>{formation.description}</td>
-                      <td>{formation.date_debut}</td>
-                      <td>{formation.date_fin}</td>
+                      <td>{formation.date_debut_formatted}</td>
+                      <td>{formation.date_fin_formatted}</td>
                       <td>{formation.formateur_animateur}</td>
                       <td>{formation.site_de_formation}</td>
                       <td>{formation.mode_de_formation}</td>

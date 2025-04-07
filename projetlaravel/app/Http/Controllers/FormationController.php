@@ -11,6 +11,7 @@ class FormationController extends Controller
     public function index()
     {
         return Formation::all();
+        return response()->json($formations);
     }
 
     // Afficher une formation spécifique

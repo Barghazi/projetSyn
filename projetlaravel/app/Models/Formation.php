@@ -3,25 +3,40 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Formation extends Model
 {
-    use HasFactory;
+    protected $table = 'formations';
 
-    // Si le nom de la table n'est pas le pluriel du nom de la classe, il faut le spécifier
-    protected $table = 'formations'; // Par exemple, 'formations' pour la table dans la base de données
-
-    // Définir les champs qui peuvent être remplis (en masse)
     protected $fillable = [
         'titre',
         'description',
         'date_debut',
         'date_fin',
+        'formateur_animateur',
+        'site_de_formation',
+        'mode_de_formation',
+        'statut',
     ];
 
-    // Si les dates sont utilisées dans le modèle, spécifie le format de la date
-    protected $dates = ['date_debut', 'date_fin'];
-}
+    protected $dates = [
+        'date_debut',
+        'date_fin',
+    ];
+    protected $appends = ['date_debut_formatted', 'date_fin_formatted'];
 
+
+    // Accessors personnalisés
+    public function getDateDebutFormattedAttribute()
+    {
+        return Carbon::parse($this->date_debut)->format('d/m/Y');
+    }
+
+    public function getDateFinFormattedAttribute()
+    {
+        return Carbon::parse($this->date_fin)->format('d/m/Y');
+    }
+    
+}
