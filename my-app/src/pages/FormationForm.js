@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styleForm.css';
 
-const FormationForm = () => {
+const FormationForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
     titre: '',
     description: '',
@@ -24,13 +24,23 @@ const FormationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Logique de soumission du formulaire ici
+    onSubmit(formData); // Passer les données du formulaire au parent
+    setFormData({ // Réinitialiser le formulaire après soumission
+      titre: '',
+      description: '',
+      dateDebut: '',
+      dateFin: '',
+      formateur: '',
+      site: '',
+      mode: '',
+      statut: '',
+      lien: ''
+    });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Formulaire de Planification de Formation</h2> {/* Titre ajouté */}
+      <h2>Formulaire de Planification de Formation</h2>
 
       <div className="form-group">
         <label>Titre</label>
@@ -112,7 +122,6 @@ const FormationForm = () => {
         </select>
       </div>
 
-      {/* Afficher le champ de lien seulement si le mode est "hybride" ou "distance" */}
       {(formData.mode === 'hybride' || formData.mode === 'distance') && (
         <div className="form-group">
           <label>Entrez le lien de la formation</label>
