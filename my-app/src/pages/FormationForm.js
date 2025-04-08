@@ -1,41 +1,50 @@
 import React, { useState } from 'react';
 import './styleForm.css';
+import { useNavigate } from 'react-router-dom';
 
-const FormationForm = ({ onSubmit }) => {
+const FormationForm = () => {
   const [formData, setFormData] = useState({
     titre: '',
     description: '',
-    dateDebut: '',
-    dateFin: '',
-    formateur: '',
-    site: '',
-    mode: '',
+    date_debut: '',
+    date_fin: '',
+    formateur_animateur: '',
+    site_de_formation: '',
+    mode_de_formation: '',
+    lien: '',
     statut: '',
-    lien: '' // Champ pour le lien
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData); // Passer les données du formulaire au parent
-    setFormData({ // Réinitialiser le formulaire après soumission
-      titre: '',
-      description: '',
-      dateDebut: '',
-      dateFin: '',
-      formateur: '',
-      site: '',
-      mode: '',
-      statut: '',
-      lien: ''
-    });
+
+    fetch('http://localhost:8000/api/formations', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('Erreur lors de l’envoi');
+        return response.json();
+      })
+      .then(() => {
+        alert('Formation ajoutée avec succès !');
+        navigate('/planifier-formation');
+      })
+      .catch((error) => {
+        console.error('Erreur :', error);
+        alert('Échec de l’ajout de la formation.');
+      });
   };
 
   return (
@@ -67,8 +76,8 @@ const FormationForm = ({ onSubmit }) => {
         <label>Date début</label>
         <input
           type="date"
-          name="dateDebut"
-          value={formData.dateDebut}
+          name="date_debut"
+          value={formData.date_debut}
           onChange={handleChange}
           required
         />
@@ -78,8 +87,8 @@ const FormationForm = ({ onSubmit }) => {
         <label>Date fin</label>
         <input
           type="date"
-          name="dateFin"
-          value={formData.dateFin}
+          name="date_fin"
+          value={formData.date_fin}
           onChange={handleChange}
           required
         />
@@ -89,8 +98,8 @@ const FormationForm = ({ onSubmit }) => {
         <label>Formateur</label>
         <input
           type="text"
-          name="formateur"
-          value={formData.formateur}
+          name="formateur_animateur"
+          value={formData.formateur_animateur}
           onChange={handleChange}
           required
         />
@@ -100,8 +109,8 @@ const FormationForm = ({ onSubmit }) => {
         <label>Site</label>
         <input
           type="text"
-          name="site"
-          value={formData.site}
+          name="site_de_formation"
+          value={formData.site_de_formation}
           onChange={handleChange}
           required
         />
@@ -110,8 +119,8 @@ const FormationForm = ({ onSubmit }) => {
       <div className="form-group">
         <label>Mode</label>
         <select
-          name="mode"
-          value={formData.mode}
+          name="mode_de_formation"
+          value={formData.mode_de_formation}
           onChange={handleChange}
           required
         >
@@ -122,15 +131,15 @@ const FormationForm = ({ onSubmit }) => {
         </select>
       </div>
 
-      {(formData.mode === 'hybride' || formData.mode === 'distance') && (
+      {(formData.mode_de_formation === 'hybride' ||
+        formData.mode_de_formation === 'distance') && (
         <div className="form-group">
-          <label>Entrez le lien de la formation</label>
+          <label>Lien (si en ligne)</label>
           <input
             type="url"
             name="lien"
             value={formData.lien}
             onChange={handleChange}
-            placeholder="https://votre-lien.com"
             required
           />
         </div>

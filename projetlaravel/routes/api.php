@@ -9,13 +9,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/formations', [FormationController::class, 'index']);   // Liste des formations
 Route::get('/formations/{id}', [FormationController::class, 'show']); // Détails d'une formation
 
-// Routes protégées par auth:sanctum
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/formations', [FormationController::class, 'store']);    // Créer une formation
-    Route::put('/formations/{id}', [FormationController::class, 'update']); // Mettre à jour une formation
-    Route::delete('/formations/{id}', [FormationController::class, 'destroy']); // Supprimer une formation
-    Route::get('/user', [UserController::class, 'profile']); // Profil de l'utilisateur connecté
-});
+Route::post('/formations', [FormationController::class, 'store']);// Créer une formation
+Route::put('/formations/{id}', [FormationController::class, 'update']); // Mettre à jour une formation
+Route::delete('/formations/{id}', [FormationController::class, 'destroy']); // Supprimer une formation
+Route::get('/user', [UserController::class, 'profile']); // Profil de l'utilisateur connecté
+
 
 // Routes d'authentification
 Route::post('login', [AuthController::class, 'login']);  // Authentification
