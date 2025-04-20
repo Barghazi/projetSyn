@@ -1,0 +1,137 @@
+/* Conteneur principal */
+.gestion-logistique-container {
+    font-family: 'Arial', sans-serif;
+    margin-left: 250px; /* Ajuste la marge en fonction de la barre latérale */
+    padding: 30px;
+    background-color: #f4f4f9;
+    width: calc(100% - 250px); /* La page prend tout l'espace restant après la barre latérale */
+  }
+  
+  /* Titre principal */
+  .title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  /* Section de sélection du site d'hébergement */
+  .site-selection-container {
+    margin-bottom: 40px;
+  }
+  
+  .site-label {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .site-select {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .site-select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .btn-assign {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .btn-assign:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Section Logistique */
+  .logistique-container {
+    border: 1px solid #ddd;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logistique-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .logistique-item {
+    margin-bottom: 15px;
+  }
+  
+  .logistique-field {
+    margin-bottom: 15px;
+  }
+  
+  .logistique-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .logistique-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  .logistique-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Bouton de validation */
+  .btn-submit {
+    background-color: #28a745;
+    padding: 12px 24px;
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .btn-submit:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .gestion-logistique-container {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .site-select, .logistique-input, .btn-assign, .btn-submit {
+      width: 100%;
+      max-width: none;
+    }
+  }
+  

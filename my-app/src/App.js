@@ -5,6 +5,9 @@ import Login from "./pages/Login";
 import PlanifierFormation from "./pages/Planifier";
 import FormationForm from "./pages/FormationForm";
 import Sidebar from "./pages/Sidebar";
+import AffecterFormateurs from './pages/AffecterFormateurs';
+import GestionLogistique from './pages/GestionLogistique';
+import ExportationLogistique from './pages/ExportationLogistique';
 
 const AppContent = () => {
   const location = useLocation();
@@ -22,6 +25,9 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/planifier-formation" element={<PlanifierFormation />} />
           <Route path="/ajouter-formation" element={<FormationForm />} />
+          <Route path="/affecter-formateurs/:formationId" element={<AffecterFormateurs />} />
+          <Route path="/logistique/:id" element={<GestionLogistique />} />
+          <Route path="/logistique/export/:id" element={<ExportationLogistique />} />
         </Routes>
       </div>
     </div>

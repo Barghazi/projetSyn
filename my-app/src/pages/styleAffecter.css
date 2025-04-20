@@ -1,0 +1,58 @@
+.buttons-wrapper {
+    display: flex; /* Utiliser flexbox pour contenir les boutons */
+    justify-content: flex-end; /* Aligner les boutons à gauche */
+    margin-left: 20px; /* Décalage des boutons à gauche */
+    margin-bottom: 10px; /* Espacement sous le conteneur de boutons */
+  }
+  
+  .buttons-container {
+    display: flex; /* Disposer les boutons sur une seule ligne */
+    gap: 10px; /* Espacement entre les boutons */
+  }
+  
+  .btn {
+    padding: 10px 15px; /* Taille du bouton */
+    background-color: #4CAF50; /* Couleur de fond par défaut */
+    color: white; /* Couleur du texte */
+    border: none; /* Retirer la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main */
+    font-size: 16px; /* Taille du texte dans le bouton */
+  }
+  
+  .btn.affecter {
+    background-color: #28a745; /* Vert pour "Affecter" */
+  }
+  
+  .btn.desaffecter {
+    background-color: #dc3545; /* Rouge pour "Désaffecter" */
+  }
+  
+  .btn:hover {
+    background-color: #45a049; /* Changer la couleur en survol */
+  }
+  h2 {
+    font-size: 24px; /* Taille du texte */
+    font-weight: bold; /* Gras pour accentuer le titre */
+    color: #333; /* Couleur sombre pour la lisibilité */
+    margin-bottom: 20px; /* Espacement sous le titre */
+    text-align: left; /* Alignement à gauche */
+    border-bottom: 2px solid #4CAF50; /* Ligne sous le titre pour le distinguer */
+    padding-bottom: 10px; /* Espacement entre le texte et la ligne */
+    margin-left: 20px; /* Marge à gauche pour ne pas chevaucher la sidebar */
+  }
+  
+  h2 span {
+    color: #28a745; /* Couleur verte pour l'ID de la formation */
+    font-weight: normal; /* Normal pour ne pas accentuer l'ID */
+  }
+  table {
+    width: 100%; /* Prendre toute la largeur disponible après la sidebar */
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: 20px; /* Marge à gauche pour ne pas chevaucher la sidebar */
+  }
+  

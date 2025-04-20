@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'; // Importation de Link
 import './styles.css';
 import FormationFilter from './FormationFilter'; // Import du composant FormationFilter
 // Importation des autres composants nécessaires
+import { useNavigate } from 'react-router-dom';
 
 const Planifier = () => {
   const [formations, setFormations] = useState([]);
@@ -41,16 +42,13 @@ const Planifier = () => {
     });
     setFilteredFormations(filtered);
   };
-
+  const navigate = useNavigate();
   const handleCheckboxChange = (id) => {
-    setSelectedFormations((prevSelected) => {
-      if (prevSelected.includes(id)) {
-        return prevSelected.filter((formationId) => formationId !== id);
-      } else {
-        return [...prevSelected, id];
-      }
-    });
+    setSelectedFormations([id]); // Une seule sélection
+    navigate(`/affecter-formateurs/${id}`); // Redirection vers la page des formateurs
+   
   };
+  
 
   const handleSubmit = () => {
     if (selectedFormations.length > 0) {

@@ -1,6 +1,6 @@
 /* ======= Styles de la Sidebar ======= */
 .sidebar {
-  width: 220px; /* Légèrement plus large pour plus de confort */
+  width: 250px; /* Légèrement plus large pour plus de confort */
   height: 100vh;
   background: linear-gradient(to bottom, #4CAF50, #83c485); /* Dégradé vert */
   color: white;
@@ -10,21 +10,22 @@
   display: flex;
   flex-direction: column;
   align-items: stretch; /* L'alignement prend toute la largeur */
-  padding-top: 30px; /* Augmenter un peu l'espace en haut */
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3); /* Ombre plus douce */
+  padding-top: 10px; /* Augmenter un peu l'espace en haut */
+  
   z-index: 1000; /* Assurer qu'il soit au-dessus du contenu */
-  overflow-y: auto; /* Ajouter un défilement si le contenu dépasse */
+  overflow-x: auto; /* Défilement horizontal */
+ 
+}
+/* Style pour le titre h2 */
+.sidebar h2 {
+  font-size: 24px; /* Taille de la police moyenne */
+  text-align: left; /* Aligner à gauche */
+  text-decoration: underline; /* Sous-ligner le texte */
+  margin-top: 0; /* Placer le titre en haut sans marge supplémentaire */
+  padding-left: 20px; /* Ajouter un peu d'espace à gauche */
+  font-weight: bold; /* Mettre le texte en gras */
 }
 
-.sidebar h2 {
-  font-size: 26px; /* Augmenter la taille du titre */
-  margin-bottom: 25px; /* Plus d'espace sous le titre */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-align: center; /* Centrer le titre */
-  padding: 0 10px; /* Ajouter un petit espacement horizontal */
-}
 
 .sidebar ul {
   list-style: none;
@@ -77,12 +78,18 @@
 
 
 /* ======= Contenu principal ======= */
+.layout {
+  background: #f4f6f9;  /* Applique le fond gris à toute la page */
+  min-height: 100vh;
+  padding: 20px;  /* Un peu de marge pour l'espacement */
+}
+
 .main-content {
   margin-left: 200px;
   padding: 20px;
-  width: calc(100% - 250px);
+  background: #f4f6f9; /* Applique le même fond gris à la zone contenant le contenu */
+  width: calc(100% - 250px); /* Ajustement de la largeur si vous avez une barre latérale */
   min-height: 100vh;
-  background: #f4f6f9;
   overflow-y: auto;
 }
 
