@@ -1,13 +1,13 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import Login from "./pages/Login";
-import PlanifierFormation from "./pages/Planifier";
-import FormationForm from "./pages/FormationForm";
-import Sidebar from "./pages/Sidebar";
-import AffecterFormateurs from './pages/AffecterFormateurs';
-import GestionLogistique from './pages/GestionLogistique';
-import ExportationLogistique from './pages/ExportationLogistique';
+import Login from "./pages/CDC/Login";
+import PlanifierFormation from "./pages/CDC/Planifier";
+import FormationForm from "./pages/CDC/FormationForm";
+import Sidebar from "./pages/CDC/Sidebar";
+import AffecterFormateurs from './pages/CDC/AffecterFormateurs';
+import GestionLogistique from './pages/CDC/GestionLogistique';
+import ExportationLogistique from './pages/CDC/ExportationLogistique';
 
 const AppContent = () => {
   const location = useLocation();
