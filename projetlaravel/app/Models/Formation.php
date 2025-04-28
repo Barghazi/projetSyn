@@ -4,10 +4,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Carbon;
 
 class Formation extends Model
 {
+    use HasFactory;
+    
     protected $table = 'formations';
 
     protected $fillable = [
@@ -38,5 +41,11 @@ class Formation extends Model
     {
         return Carbon::parse($this->date_fin)->format('d/m/Y');
     }
+    // Dans le modèle Formation
+public function formateurs()
+{
+    return $this->hasMany(Formateur::class); // ou belongsToMany si c'est une relation plusieurs-à-plusieurs
+}
+
     
 }
